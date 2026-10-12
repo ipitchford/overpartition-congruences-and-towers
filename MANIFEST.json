@@ -72,6 +72,11 @@
       "sha256": "d54c5bf60bedc1b21fcc4f14ec98bd6092399a3a7f8e5b9648a9ebc6b58b0f5e"
     },
     {
+      "path": "RESEARCH_GATES.json",
+      "size_bytes": 6429,
+      "sha256": "aa716dd437f7af46e01c4e4aeb29aec330bc6a9fc6e370b2a07d14936f7e9653"
+    },
+    {
       "path": "STATUS.md",
       "size_bytes": 465,
       "sha256": "c27cdc811f90b754b9eee9ec64bdf2e5adcc08d610fac55d9ff0a7db649051a2"
