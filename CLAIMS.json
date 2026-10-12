@@ -1,0 +1,56 @@
+{
+  "version": "1.1.0-candidate",
+  "doi": "10.5281/zenodo.23319157",
+  "status": "unrefereed-candidate",
+  "claims": [
+    {
+      "id": "A7",
+      "statement": "pbar(16(56n+k))=0 mod7, n>=0, k in {11,43,51}.",
+      "paper": "papers/mod7/paper.tex",
+      "locator": "thm",
+      "evidence": "theta dissections, eta holomorphy, sufficient twist level3136, Sturm8064",
+      "assurance": "written computer-assisted proof with internal exact replay; not formal verification"
+    },
+    {
+      "id": "B1723",
+      "statement": "The exact five modulo88 and six modulo104 classes in Theorem1, for all n>=0.",
+      "paper": "papers/mod17-19-23/paper.tex",
+      "locator": "thm:1723",
+      "evidence": "Wei reduction Lemma3; Hecke Proposition4; support Lemma5",
+      "assurance": "written computer-assisted proof with internal exact replay; not formal verification"
+    },
+    {
+      "id": "B19",
+      "statement": "pbar(4*17^2*n)=0 mod19 for n>=0, n=3mod8, (n/17)=-1, (n/19)=1.",
+      "paper": "papers/mod17-19-23/paper.tex",
+      "locator": "thm:19",
+      "evidence": "lift, projection law, all cusps, exact cyclotomic cancellation, Hecke-Sturm through53200",
+      "assurance": "written computer-assisted proof with internal exact replay; not formal verification"
+    },
+    {
+      "id": "C-TOWERS",
+      "statement": "All I-IV families with exactly the prime, scaling, odd-class and Legendre restrictions of Theorem1.",
+      "paper": "papers/towers/paper.tex",
+      "locator": "thm:main",
+      "evidence": "Wei reductions, exact U4 and Hecke matrices, support propagation Lemma2",
+      "assurance": "written computer-assisted proof with internal exact replay; not formal verification"
+    },
+    {
+      "id": "C-CLASS13",
+      "statement": "For i>=0 the whole class pbar(13*4^i*(8n+7)) vanishes mod13 for every n>=0 iff i=3mod4.",
+      "paper": "papers/towers/paper.tex",
+      "locator": "prop:class13",
+      "evidence": "exact U4 matrix; 12-state orbit; inclusive support bound192; coefficient7 witnesses",
+      "assurance": "written computer-assisted proof with internal exact replay; not formal verification"
+    }
+  ],
+  "overlap": [
+    {
+      "claims": [
+        "B1723",
+        "C-TOWERS"
+      ],
+      "scope": "C(I) ell11 i0 and C(II) i0 are the same conclusions."
+    }
+  ]
+}

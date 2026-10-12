@@ -1,0 +1,210 @@
+{
+  "version": "1.1.0-candidate",
+  "files": [
+    {
+      "path": ".github/workflows/verify.yml",
+      "size_bytes": 540,
+      "sha256": "a6b17106292d1dafbfaae170e618d3481bc6bff02766110b80f4277b268937a3"
+    },
+    {
+      "path": ".zenodo.json",
+      "size_bytes": 1331,
+      "sha256": "7838af6148e0c74d4c00be60b2207167790f2957351a0677a084f7ced1f08da9"
+    },
+    {
+      "path": "AI_INDEX.md",
+      "size_bytes": 2877,
+      "sha256": "994aff7e9824f6f26a1343ac8a8107055aef2d92405fcd830d5832447bcd4e6d"
+    },
+    {
+      "path": "ASSURANCE.md",
+      "size_bytes": 2440,
+      "sha256": "c13a3f448636985ae9f17b438a9b309974a234d7b84e5f3bbe1bd7e1137f54f0"
+    },
+    {
+      "path": "CITATION.cff",
+      "size_bytes": 334,
+      "sha256": "43474c2083c4c4bf267ee7b7fdf91996836ca918519f221d3b09eea188d583d0"
+    },
+    {
+      "path": "CITATION_AUDIT.md",
+      "size_bytes": 2520,
+      "sha256": "73608c8703490d9c4dcfc4db852b12ecfdad667fd381f226eec6829e213f32be"
+    },
+    {
+      "path": "CLAIMS.json",
+      "size_bytes": 2312,
+      "sha256": "bb6378b7b90a47440dbd3a94494e1b99e28f9be4a7e494cf124f4d0402e8623f"
+    },
+    {
+      "path": "ENVIRONMENT.txt",
+      "size_bytes": 266,
+      "sha256": "467974b69360644d8a04f983204d39bbd63859d0ca0a5250527cc67c0af76019"
+    },
+    {
+      "path": "LICENSE",
+      "size_bytes": 284,
+      "sha256": "46eec78979efafa9c0b04a2d1cb5f6687f94c0f45f0200cf83b5ac2157db6f56"
+    },
+    {
+      "path": "LICENSE-CODE",
+      "size_bytes": 1066,
+      "sha256": "19ebb192c1547572ad60daadb792f205524c9b3a1a789819918861bb6a688f05"
+    },
+    {
+      "path": "LICENSES.md",
+      "size_bytes": 749,
+      "sha256": "e85db0c0fc45d4618d95d4b78ff5e3f0109f9d43c74ced701d365345c9348b93"
+    },
+    {
+      "path": "PROVENANCE.md",
+      "size_bytes": 1267,
+      "sha256": "44fee4722c79dbd035a33c91a4cef9ac3e362d32c6958cb58e28848751a1e8b6"
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 1919,
+      "sha256": "3349fde5bc613ae97244f5db65cbeb8cfa0e28bb57083a6168fb6cd69af85dab"
+    },
+    {
+      "path": "REPLAY_RECEIPT.md",
+      "size_bytes": 1546,
+      "sha256": "d54c5bf60bedc1b21fcc4f14ec98bd6092399a3a7f8e5b9648a9ebc6b58b0f5e"
+    },
+    {
+      "path": "STATUS.md",
+      "size_bytes": 465,
+      "sha256": "c27cdc811f90b754b9eee9ec64bdf2e5adcc08d610fac55d9ff0a7db649051a2"
+    },
+    {
+      "path": "check_package.py",
+      "size_bytes": 382,
+      "sha256": "4effaedf568a6a11df469764548ff9557e733bc7057f0b413c92e30f10861698"
+    },
+    {
+      "path": "negative_controls.py",
+      "size_bytes": 1409,
+      "sha256": "1a02700143f9af39a499f4188e87786cb610cd7212832a111f88885501ca132a"
+    },
+    {
+      "path": "paper.pdf",
+      "size_bytes": 764416,
+      "sha256": "084f491db78b34f16034b5b439a64ddfb27e13818a4c96e227f2570ccc5d1378"
+    },
+    {
+      "path": "papers/mod17-19-23/code/hecke1723/check.py",
+      "size_bytes": 1545,
+      "sha256": "3632a46333a75807761d08b38860bfd8d481642d61a03a997eee6c76de44c258"
+    },
+    {
+      "path": "papers/mod17-19-23/code/independent/independent_checks.py",
+      "size_bytes": 7183,
+      "sha256": "060e64d38ac75bd84be2f0c7a22685bb114ea1feb1ea93367a8372889e11efd2"
+    },
+    {
+      "path": "papers/mod17-19-23/code/mod19/check_weights.py",
+      "size_bytes": 950,
+      "sha256": "dd3d9d1b219d55b26c2de49bb6da3ee8b6a53977ec6931dd879b45e882412b71"
+    },
+    {
+      "path": "papers/mod17-19-23/code/mod19/cusps.py",
+      "size_bytes": 6111,
+      "sha256": "22a320ad45a760f8c143fb0aa9ee7039759ab476e9298e4aa358f2f703106a7b"
+    },
+    {
+      "path": "papers/mod17-19-23/code/mod19/exact361.py",
+      "size_bytes": 5152,
+      "sha256": "88fbfce364105534d3a587b1ced22698636eacb45fdb9196fb06cb58ba89d09f"
+    },
+    {
+      "path": "papers/mod17-19-23/code/mod19/sturm_check.py",
+      "size_bytes": 2228,
+      "sha256": "956fbc95b206465f7d4856d488c71471cc01feb7ef96565da9377f9cf1978370"
+    },
+    {
+      "path": "papers/mod17-19-23/paper.pdf",
+      "size_bytes": 252637,
+      "sha256": "40e7ac07cd197070cda4f823c3131c7030f5c2d8a9f74bc2a45a64df6012edf8"
+    },
+    {
+      "path": "papers/mod17-19-23/paper.tex",
+      "size_bytes": 21675,
+      "sha256": "2a22d9f1f5640293607cf359d606d88be051756271c4ae3848cef36cb95c13ed"
+    },
+    {
+      "path": "papers/mod7/code/ghn_check.py",
+      "size_bytes": 1830,
+      "sha256": "34cc84613ffd90e1cd8f762f09f428831bfb7b6157fbe5c81a4e69b5ed05c4a4"
+    },
+    {
+      "path": "papers/mod7/code/independent/reduced_sturm_stdlib.py",
+      "size_bytes": 2898,
+      "sha256": "8f401c92abefb8f8e5c4a67e386e5e4865aeb95067d0711582cdfa14a36471a2"
+    },
+    {
+      "path": "papers/mod7/code/sturm_check.py",
+      "size_bytes": 1328,
+      "sha256": "5fb1eb3d4505ffcf0476031cacc3e979de8bb3b94d91053b113684f7567b9626"
+    },
+    {
+      "path": "papers/mod7/code/verify_identities.py",
+      "size_bytes": 3836,
+      "sha256": "785004bc04eb9a28d89dd2be4bbd15f39698de0aa617e97314abeb6cd1139e9b"
+    },
+    {
+      "path": "papers/mod7/paper.pdf",
+      "size_bytes": 230346,
+      "sha256": "bf0a95d772dc0f53407efbd6d4a085c002fb4b2a4c784be0a17406493a444966"
+    },
+    {
+      "path": "papers/mod7/paper.tex",
+      "size_bytes": 10360,
+      "sha256": "6356ff1240bf94860067b2fe468c5aa365b238e93185a899434b75d4e9cf7891"
+    },
+    {
+      "path": "papers/towers/code/referee/referee_check.py",
+      "size_bytes": 4397,
+      "sha256": "9c782ff7b976a37b22f3a03fc92ae27dd116fb3a7b03eb2f688a355cff063fb8"
+    },
+    {
+      "path": "papers/towers/code/structural/class13.py",
+      "size_bytes": 1365,
+      "sha256": "42b058e6ab4bede2f703a0b0289866507bf0e4f758efff522a57f70b33363139"
+    },
+    {
+      "path": "papers/towers/code/structural/eigenform_reconstruction.py",
+      "size_bytes": 3748,
+      "sha256": "354588aeb56eba1632f7a77723c89bad854e6387806e1b2b0c897247e74e878b"
+    },
+    {
+      "path": "papers/towers/code/structural/independent_tower_check.py",
+      "size_bytes": 8221,
+      "sha256": "36f88ab45ae228dd4b181db57ea61978270af5601e7e422a6dd44fa507ab7eac"
+    },
+    {
+      "path": "papers/towers/paper.pdf",
+      "size_bytes": 240768,
+      "sha256": "ea5dedb4885bbd08174cc00a4677aabb409f80a6deb49e5fe8ad22980300bcd2"
+    },
+    {
+      "path": "papers/towers/paper.tex",
+      "size_bytes": 16393,
+      "sha256": "2cb375a9423be04c06270aad9e7005ae0008fdf851ab5f44659c70f8151ae177"
+    },
+    {
+      "path": "requirements.txt",
+      "size_bytes": 61,
+      "sha256": "dae7a77d62bb2eb08794e0b1185e63c05358875e59b36a1c883ad176e4deb4c9"
+    },
+    {
+      "path": "reviews/revision-response.md",
+      "size_bytes": 2991,
+      "sha256": "6fca228ff6ff685773d3b5920c4f4a9e39576a727fed412eec3365f329021e38"
+    },
+    {
+      "path": "verify.py",
+      "size_bytes": 2738,
+      "sha256": "5133844d747d04f4441d6e5456467ebc5b33f03b3afa266393002311252a22c6"
+    }
+  ]
+}

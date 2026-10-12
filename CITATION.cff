@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: Cite the exact unrefereed candidate version.
+title: "Overpartition congruences and class-restricted towers"
+authors:
+  - name: Anonymous
+version: 1.1.0-candidate
+date-released: 2026-10-12
+doi: 10.5281/zenodo.23319157
+url: https://github.com/ipitchford/overpartition-congruences-and-towers
+license: CC0-1.0

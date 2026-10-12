@@ -1,0 +1,123 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1in]{geometry}\usepackage{url}\usepackage{booktabs}
+\setlength{\emergencystretch}{3em}
+\newtheorem{theorem}{Theorem}\newtheorem{lemma}[theorem]{Lemma}\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\pb}{\overline{p}}
+\newcommand{\leg}[2]{\left(\frac{#1}{#2}\right)}
+\title{Class-restricted $\ell^2$-congruences for overpartitions\\ modulo 13, 17 and 23}
+\author{Anonymous}\date{12 October 2026}
+\begin{document}\maketitle\sloppy
+\begin{abstract}
+We prove several new families of Ramanujan-type congruences for the overpartition function $\pb(n)$, for example
+\[\pb(17\cdot4^i\cdot29^2\cdot m)\equiv0\pmod{17}\quad\text{for all }i\ge0,\ m\equiv3\ (\mathrm{mod}\ 8),\ \leg m{29}=-1.\]
+The displayed $\ell^2$-families of Ryan, Sirolli, Villegas-Morales and Zheng for these moduli have Legendre restrictions but no additional class restriction modulo $8$. Here small primes $\ell$ occur with such a class restriction. A filtered finite search suggested the examples. The proofs use Shimura's operators on low-dimensional modular-form spaces and correction terms that are reductions of exact $U(4)$ eigenvectors. One support identity therefore proves every tower level. We also classify exactly the levels at which the whole class $13\cdot4^i(8n+7)$ vanishes modulo $13$.
+\end{abstract}
+
+\section{Introduction}
+Let $\pb(n)$ count the overpartitions of $n$~\cite{CL}, so that $\sum\pb(n)q^n=1/\varphi(-q)$ with $\varphi(q)=\sum_{k\in\mathbb Z}q^{k^2}$. Treneer~\cite{Treneer} showed that $\pb$ satisfies congruences $\pb(m\ell^3n)\equiv0\pmod m$, and Ryan, Sirolli, Villegas-Morales and Zheng~\cite{RSVZ} (also Zheng~\cite{Zheng}) made these explicit. RSVZ give families of two kinds: $\pb(m\ell^3n)\equiv0\pmod m$, and $\pb(m\ell^2n)\equiv0\pmod m$ for $n$ prime to $\ell$ with a single Legendre condition. Both kinds are infinite in $\ell$ for $m\in\{3,5,7,11\}$. For $m\in\{13,17,19\}$ they list the primes $\ell$ found by a search up to about $5000$; in the $\ell^2$-families the smallest are $\ell=431$ for $m=13$ and $\ell=167$ for $m=17$. For $m=23$ they remark on $\ell=5303$ and $8783$. They note that cusp forms make the case $m\ge13$ harder. None of these families has a congruence condition modulo~$8$. Wei~\cite{Wei} proved $\pb(11(8n+5))\equiv0\pmod{11}$ and $\pb(13\cdot2^6(8n+7))\equiv0\pmod{13}$. He also conjectured congruences modulo $7$, $17$, $19$ and $23$ involving residue classes modulo~$8$ together with Legendre conditions. Those modulo $17$ and $23$ are the cases $i=0$ of (I) (with $\ell=11$) and of (II) below, and they are proved here. A different treatment, together with the modulo-$19$ case, is in the modulo-$17/19/23$ paper in this versioned collection.
+
+The discovery scan used $p\in\{13,17,19,23,29,31\}$, $\ell\in\{3,5,7,11,13,17,19,23,29,31,37,41,43\}$ with $\ell\ne p$, $0\le j\le6$, odd classes modulo $8$, and both nonzero Legendre signs. Arguments were strictly below $40000000$. It retained a candidate only after at least forty matching instances and discarded classes already vanishing without the $\ell^2$ factor. Thus it was a filtered search, not an exhaustive classification of all possible congruences even within the parameter box. The logs are historical discovery evidence; the proofs below do not extrapolate them.
+
+\begin{theorem}\label{thm:main}
+For all integers $i\ge0$ and $m\ge1$ satisfying the conditions below:
+\begin{enumerate}
+\item[(I)] $\pb(17\cdot4^i\ell^2m)\equiv0\pmod{17}$ for $\ell\in\{11,29\}$, $m\equiv3\pmod8$, $\leg m\ell=-1$;
+\item[(II)] $\pb(23\cdot4^i\cdot13^2m)\equiv0\pmod{23}$ for $m\equiv5\pmod8$, $\leg m{13}=1$;
+\item[(III)] $\pb(13\cdot4^i\cdot7^2m)\equiv0\pmod{13}$ for $m\equiv7\pmod8$, $\leg m7=-1$.
+\end{enumerate}
+Moreover:
+\begin{enumerate}
+\item[(IV)] $\pb(52\,\ell^2m)\equiv0\pmod{13}$ for $\ell\in\{5,29\}$, $m\equiv1\pmod4$, $\leg m\ell=-1$; and $\pb(104\cdot5^2m)\equiv0\pmod{13}$ for all odd $m$ with $\leg m5=1$.
+\end{enumerate}
+\end{theorem}
+
+The cases $i=0$ of (I) with $\ell=11$ and of (II) are Wei's conjectures and coincide with the modulo-$17/23$ results in the companion paper in this collection; they are not separate contributions. The case $i=3$ of (III) follows from Wei's theorem since $49m\equiv m\pmod8$. In fact Proposition~\ref{prop:class13} below shows that precisely $i\equiv3\pmod4$ have this whole-class explanation. The consulted literature did not establish the remaining exact parameter families; this bounded search is not universal priority evidence. The additional class conditions and actual prime choices, rather than square-prime shape alone, distinguish the displayed families.
+
+\section{Tools}
+Let $F=\sum_{n\ \mathrm{odd}}\sigma(n)q^n=\eta(4z)^8/\eta(2z)^4\in M_2(\Gamma_0(4))$. For $\lambda\ge0$ the space $V_\lambda=M_{\lambda+1/2}(\Gamma_0(4))$ has the basis $B_a=F^a\varphi^{2\lambda+1-4a}$, $0\le a\le\lfloor(2\lambda+1)/4\rfloor$, with $B_a=q^a+O(q^{a+1})$~\cite[Thm.~1.49]{Ono}. We use:
+\begin{enumerate}
+\item Shimura's operator~\cite{Shimura} $T(\ell^2)$ ($\ell$ an odd prime) preserves $V_\lambda$, and acts by
+\[(f\mid T(\ell^2))(n)=a(\ell^2n)+\leg{(-1)^\lambda n}\ell\ell^{\lambda-1}a(n)+\ell^{2\lambda-1}a(n/\ell^2).\]
+\item $U(4)$ preserves $V_\lambda$. Indeed, by~\cite[Prop.~3.7]{Ono}, $U(2)$ maps $M_{\lambda+1/2}(\Gamma_0(8),\psi)$ to $M_{\lambda+1/2}(\Gamma_0(8),\psi\leg8\cdot)$, so $U(4)=U(2)^2$ preserves $M_{\lambda+1/2}(\Gamma_0(8))\supseteq V_\lambda$. For each basis element, the difference $D$ between $B_a\mid U(4)$ and the element of $V_\lambda$ agreeing with it in the first $\dim V_\lambda$ coefficients satisfies $D\varphi\in M_{\lambda+1}(\Gamma_0(8),\chi_{-4}^{\lambda+1})$. This space has Sturm bound $\lambda+1$, and we checked $D\varphi=0$ well beyond it. (This is also a theorem of Kohnen~\cite{Kohnen}.)
+\item The projection of $f\in V_\lambda$ onto an \emph{odd} class modulo $8$ lies in $M_{\lambda+1/2}(\Gamma_0(256))$, by averaging the four real characters~\cite[Prop.~2.4 and Remark~2.5]{Wei}. Multiplying by $\varphi$ gives weight $\lambda+1$ and character $\chi_{-4}^{\lambda+1}$, with Sturm bound $32(\lambda+1)$. The unit $\varphi$ may then be cancelled. This character averaging does not project onto an even class.
+\item (Wei's reduction~\cite{Wei}.) Since $\varphi^p\equiv\varphi(q^p)\pmod p$, we have $\varphi\cdot\sum\pb(pn)(-q)^n\equiv\varphi^{p-1}\mid T(p)\pmod p$, where the right side lies in $M_{(p-1)/2}(\Gamma_0(4),\chi_{-4}^{(p-1)/2})$. Let $c_p$ be the element of $V_{(p-3)/2}$ with $c_p\varphi\equiv\varphi^{p-1}\mid T(p)\pmod p$; this is verified up to the Sturm bound on $\Gamma_0(4)$. Since $\varphi$ is a unit in $\mathbb F_p[[q]]$, we have $\pb(pN)\equiv(-1)^Nc_p(N)\pmod p$. In the basis $(B_a)$, $c_p$ has coordinates modulo $p$ equal to $(1,4,1)$ for $p=13$, $(1,13,13,0)$ for $p=17$ and $(1,9,5,14,17,20)$ for $p=23$. These were verified up to the relevant Sturm bounds on $\Gamma_0(4)$ and directly against $\pb$.
+\end{enumerate}
+
+\section{The mechanism}
+Fix $p$, $\lambda=(p-3)/2$ and $c=c_p$. Let $\mathcal N$ be a set of positive integers prime to $\ell$ on which $\eta:=\leg{(-1)^\lambda N}\ell$ is constant. Put $h:=c\mid T(\ell^2)-\eta\,\ell^{\lambda-1}c$. Comparing coefficients gives
+\begin{equation}\label{eq:key}
+c(\ell^2N)\equiv h(N)\pmod p\qquad(N\in\mathcal N).
+\end{equation}
+So it suffices to show that $h$ vanishes on $\mathcal N$. For $\mathcal N=\{4^im:\ m\equiv r\ (8)\}$ we use $h(4^im)=(h\mid U(4)^i)(m)$. The coordinates of $h\mid U(4)^i$ modulo $p$ run through a \emph{finite} orbit under the $U(4)$-matrix. It therefore suffices to check, for each orbit element, that its projection to the class $r$ modulo $8$ vanishes, which is a single Sturm check on $\Gamma_0(256)$.
+
+\begin{lemma}[Support propagation]\label{lem:propagation}
+Suppose $c\mid T(\ell^2)-\epsilon\ell^{\lambda-1}c\equiv sH\pmod p$, $H\mid U(4)=\alpha H$, and $H(m)=0$ on an odd class $r\pmod8$. Then $c(\ell^24^im)\equiv0\pmod p$ for every $i\ge0$ and $m\ge1$ in that class with $\leg{(-1)^\lambda m}\ell=\epsilon\in\{1,-1\}$.
+\end{lemma}
+\begin{proof} The Legendre condition ensures $\ell\nmid m$ and is unchanged by multiplication by $4^i$. The backward Hecke term is therefore zero and the middle term cancels. The remaining coefficient is $sH(4^im)=s\alpha^iH(m)=0$.\end{proof}
+This elementary reusable lemma packages the existing Hecke argument; it is not claimed as a new general theorem in modular-form theory.
+
+\section{Proof of Theorem~\ref{thm:main}}
+The correction terms below are reductions of the following exact forms, written in the basis $B_a$ of their respective spaces:
+\begin{center}\small
+\begin{tabular}{c c l r c c}
+$p$&$\lambda$&coordinates of $H$&$\alpha$&$h\bmod p$&zero class\\\hline
+13&5&$(0,1,-16)$&16&$12H$&7\\
+17&7&$(0,1,-16,0)$&$-64$&$12H$&3\\
+23&10&$(0,8,-383,4032,1280,-8192)$&$-512$&$2H$&5
+\end{tabular}
+\end{center}
+Here $H\mid U(4)=\alpha H$ over the integers. Identify $U(4)$ in the integral triangular basis, then check the displayed eigenvector identities exactly. Projection of $H$ to the listed odd class, multiplied by $\varphi$, has all coefficients zero through bounds $192,256,352$, respectively. Sturm over characteristic zero proves the exact support identities (or apply it modulo every prime). Hence Lemma~\ref{lem:propagation} proves (I)--(III). The former orbit periods are simply the orders of $16,-64,-512$ modulo the corresponding primes, namely $3,4,22$.
+
+The first form is $\eta(z)^2\eta(2z)^7\eta(4z)^2$, already listed by Aydin and Inam~\cite[Table 1, no.~43]{AI}. The second is $\eta(2z)^{27}/(\eta(z)^6\eta(4z)^6)$; negative eta exponents here do not imply cusp poles. These identities are auxiliary descriptions, not claims of novel eigenforms. The explicit modular checks below also provide an alternative finite-orbit proof.
+\paragraph{(I) and (II).} The relevant data modulo $p$ are as follows; full matrices are in the evidence bundle.
+\begin{center}\small
+\begin{tabular}{@{}ccccl@{}}\toprule
+$p$ & $\ell$ & $\eta$ & $h$ (coordinates) & $U(4)$-orbit of $h$\\\midrule
+17 & 11 & $+1$ & $(0,12,12,0)$ & period 4: $(0,12,12,0)\to(0,14,14,0)\to(0,5,5,0)\to(0,3,3,0)$\\
+17 & 29 & $-1$ & $(0,12,12,0)$ & the same orbit\\
+23 & 13 & $+1$ & $(0,16,16,14,7,15)$ & period 22\\\bottomrule
+\end{tabular}
+\end{center}
+For $p=17$ the sign is $\eta=\leg{-1}{\ell}\leg m\ell$. Since $\leg{-1}{11}=-1$ and $\leg{-1}{29}=1$, we get $\eta=+1$ and $-1$ respectively; that is, $c\mid T(29^2)\equiv-29^6c+h$. For $p=23$, $\lambda=10$ is even and $\eta=\leg m{13}=1$. For $N=4^im$ the character value does not depend on $i$, since $\leg{4^i}\ell=1$. The orbit is purely periodic and contains $h$ itself, so it covers every $i\ge0$. For every orbit element, the projection to the class $r=3$ (respectively $5$) modulo $8$, multiplied by $\varphi$, vanishes modulo $p$ for $n<4000$. This exceeds the Sturm bounds $256$ and $352$ on $\Gamma_0(256)$. By~\eqref{eq:key}, $\pb(p\ell^24^im)\equiv\pm c(\ell^24^im)\equiv\pm h(4^im)\equiv0$.
+
+\paragraph{(III).} Here $p=13$, $\lambda=5$, $\ell=7$, and $\eta=\leg{-4^im}{7}=\leg{-1}7\leg m7=1$. Then $h=c\mid T(49)-7^4c$ has coordinates $(0,12,3)$. Its $U(4)$-orbit modulo $13$ is the $3$-cycle (containing $h$, so it covers all $i$) $(0,12,3)\to(0,10,9)\to(0,4,1)$. Each projection to the class $7$ modulo $8$, times $\varphi$, vanishes modulo $13$ beyond the Sturm bound $192$.
+
+\paragraph{(IV).} For $N=4m$ with $m\equiv1\pmod4$ and $\leg m\ell=-1$, $\ell\in\{5,29\}$, we have $\eta=\leg{-1}\ell\leg m\ell=-1$. So $h_\ell=c\mid T(\ell^2)+\ell^4c$ (each $T(\ell^2)$-image was identified in the $3$-dimensional space $V_5$ from its first coefficients and checked well beyond), with coordinates $(7,9,12)$ for $\ell=5$ and $(5,12,3)$ for $\ell=29$. Then $h_\ell(4m)=(h_\ell\mid U(4))(m)$, and the projection of $h_\ell\mid U(4)$ to the classes $1,5$ modulo $8$ vanishes (Sturm bound $192$). For $N=8m$ with $m$ odd and $\leg m5=1$, $\eta=\leg{-8m}{5}=\leg{-1}5\leg25\leg m5=-1$, so again $c(25N)\equiv h_5(N)$. With $k=h_5\mid U(4)$ we need $k(2m)\equiv0$ for odd $m$. The form $w=k\mid U(2)-(k\mid U(4))\mid V(2)$ lies in $M_{11/2}(\Gamma_0(8),\leg8\cdot)$, and its coefficients are $k(2m)$ for $m$ odd and $0$ for $m$ even. Moreover $w\varphi$ vanishes modulo $13$ beyond its Sturm bound $6$. Since $\pb(13N)\equiv\pm c(N)$, this proves (IV).\qed
+
+\begin{remark}
+The congruences need their specified conditions; the finite search is not a classification of all other classes or primes. The exact eigenvector identities explain propagation without testing every orbit state. Other primes can be tested by the same finite-space calculation, but adding a list of numerical cases alone would not strengthen the theorem.
+\end{remark}
+
+\begin{proposition}[Exact whole-class classification modulo $13$]\label{prop:class13}
+For every integer $i\ge0$,
+\[\bigl[\pb(13\cdot4^i(8n+7))\equiv0\pmod{13}\text{ for every }n\ge0\bigr]
+\quad\Longleftrightarrow\quad i\equiv3\pmod4.\]
+\end{proposition}
+\begin{proof} In the row-coordinate convention, the exact matrix and initial vector are
+\[U=\begin{pmatrix}1&5280&42240\\0&336&2816\\0&20&192\end{pmatrix},\qquad c_{13}=(1,4,1)\pmod{13}.\]
+Its orbit modulo $13$ has length $12$ and returns to its initial vector. For each of its twelve vectors, projection onto class $7$, followed by multiplication by $\varphi$, is tested through the inclusive Sturm bound $192$. It vanishes precisely for states $3,7,11$. For every other state the coefficient at $7$ is the nonzero witness
+\[c_{13}(4^i7)\equiv7+4\cdot5^i\pmod{13}.\]
+This formula is checked on all twelve states and is periodic, since $5$ has order $4$ modulo $13$. The sign in $\pb(13N)\equiv(-1)^Nc_{13}(N)$ does not affect vanishing. Thus both directions hold for every $i$, not just the discovery range.\end{proof}
+The classification was suggested by the supplied reviewer audit and checked in the revised collection. Wei supplies the $i=3$ instance; the extension's literature status is bounded by the recorded search.
+
+\section{Verification}
+All computations use exact or modular arithmetic (python-flint). They were carried out by two separate scripts (for $p\in\{17,23\}$ and $p=13$) and confirmed by a third, independent checker written by a separate reviewer. Each congruence was also checked directly from $\pb\bmod p$: up to arguments $3\cdot10^6$ for (I) and (II), and up to $4\cdot10^7$ in the original search, with no exceptions.
+
+\section*{Collection and verification}
+This paper is part of the revised collection, version 1.1.0-candidate, DOI \url{https://doi.org/10.5281/zenodo.23319157}. Companion papers and exact verification code are archived together. The statements are unrefereed computer-assisted proof candidates; no formal verification or unaffiliated reproduction is asserted.
+
+\begin{thebibliography}{99}
+\bibitem{AI} B.~I.~Aydin and I.~Inam, On the Hecke eigenforms of half-integral weight and Dedekind-eta products, \emph{Asian-European J. Math.} 16 (2023), 2350131; \url{https://arxiv.org/abs/2301.08461}.
+\bibitem{CL} S.~Corteel and J.~Lovejoy, Overpartitions, \emph{Trans. Amer. Math. Soc.} 356 (2004), 1623--1635.
+\bibitem{Kohnen} W.~Kohnen, Modular forms of half-integral weight on $\Gamma_0(4)$, \emph{Math. Ann.} 248 (1980), 249--266.
+\bibitem{Ono} K.~Ono, \emph{The Web of Modularity}, CBMS Regional Conf. Ser. Math. 102, Amer. Math. Soc., 2004.
+\bibitem{RSVZ} N.~C.~Ryan, N.~Sirolli, J.~C.~Villegas-Morales and Q.-Y.~Zheng, Explicit families of congruences for the overpartition function, \emph{Ramanujan J.} 65 (2024), 1631--1649; arXiv:2309.01792.
+\bibitem{Shimura} G.~Shimura, On modular forms of half integral weight, \emph{Ann. of Math.} 97 (1973), 440--481.
+\bibitem{Sturm} J.~Sturm, On the congruence of modular forms, in \emph{Number Theory (New York, 1984--1985)}, Lecture Notes in Math. 1240, Springer, 1987, 275--280.
+\bibitem{Treneer} S.~Treneer, Congruences for the coefficients of weakly holomorphic modular forms, \emph{Proc. London Math. Soc. (3)} 93 (2006), 304--324.
+\bibitem{Wei} X.~Wei, New Ramanujan-type congruences for overpartitions modulo 11 and 13, arXiv:2603.08510 (2026).
+\bibitem{Zheng} Q.-Y.~Zheng, Arithmetic properties of overpartitions, arXiv:2309.00302 (2023).
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,4 @@
+CPython 3.13.5; macOS arm64 local replay.
+python-flint 0.9.0; sympy 1.14.0; mpmath 1.3.0; numpy 2.4.4.
+Pinned requirements.txt; Linux CI is producer-coordinated replay, not unaffiliated reproduction.
+TeX Live 2026 manuscript build; generated PDF checked separately.

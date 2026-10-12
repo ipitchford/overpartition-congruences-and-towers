@@ -1,0 +1,192 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1in]{geometry}\usepackage{url}
+\newtheorem{theorem}{Theorem}\newtheorem{lemma}[theorem]{Lemma}\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\pb}{\overline{p}}
+\newcommand{\leg}[2]{\left(\frac{#1}{#2}\right)}
+\title{Overpartition congruences modulo 17, 19 and 23:\\ proofs of three conjectures of Wei}
+\author{Anonymous}\date{12 October 2026}
+\setlength{\emergencystretch}{3em}
+\begin{document}\maketitle
+\begin{abstract}
+Wei recently proved Ramanujan-type congruences for the overpartition function $\pb(n)$ modulo $11$ and $13$, and stated three further congruences. Modulo $17$ and $23$ they were expected to follow from his method after Sturm-bound computations involving more than $10^9$ coefficients, which were not completed. Modulo $19$ the congruence was stated to be beyond the methods of the paper. We prove all three. For the moduli $17$ and $23$ we compute the Hecke operator $T(\ell^2)$ on a space of dimension at most $6$ and isolate a correction term that vanishes on the relevant residue class; the computation needs fewer than $4000$ coefficients. For the modulus $19$ the relevant generating function is only weakly holomorphic. We multiply it by two eta-quotients congruent to $1$ modulo $19$ before projecting onto the required classes, and show that the projection is a cusp form of weight $35/2$ on $\Gamma_0(23104)$. The congruence then follows from a $T(17^2)$ eigen-relation checked up to the Sturm bound.
+\end{abstract}
+
+\section{Introduction}
+Let $\pb(n)$ denote the number of overpartitions of $n$~\cite{CL}, so that $\sum_{n\ge0}\pb(n)q^n=1/\varphi(-q)$ with $\varphi(q)=\sum_{k\in\mathbb Z}q^{k^2}$. Wei~\cite{Wei} proved infinite families of congruences for $\pb$ modulo $11$ and $13$ by Hecke operators on the spaces $M_k(\Gamma_0(4))$, which are spanned by products of $\varphi$ and $F(q)=\sum_{n\ \mathrm{odd}}\sigma(n)q^n$. In his closing section he recorded the following.
+
+\begin{theorem}\label{thm:1723}
+For all $n\ge0$,
+\begin{align*}
+\pb\bigl(17\cdot11^2(88n+m)\bigr)&\equiv0\pmod{17}, && m\in\{19,35,43,51,83\},\\
+\pb\bigl(23\cdot13^2(104n+l)\bigr)&\equiv0\pmod{23}, && l\in\{29,53,61,69,77,101\}.
+\end{align*}
+\end{theorem}
+
+\begin{theorem}\label{thm:19}
+$\pb(17^2\cdot4n)\equiv0\pmod{19}$ for every integer $n\ge0$ with $n\equiv3\pmod 8$, $\leg n{17}=-1$ and $\leg n{19}=1$.
+\end{theorem}
+
+Wei states the congruences of Theorem~\ref{thm:1723}, explains that they reduce to Sturm-bound checks of about $1.2\cdot10^9$ and $4.0\cdot10^9$ coefficients on $\Gamma_1(340736)$ and $\Gamma_1(562432)$, and notes that these computations had not been completed. He states Theorem~\ref{thm:19} as a conjecture that cannot be proved by the methods of~\cite{Wei}. A further conjecture of~\cite{Wei}, modulo $7$, is treated in the modulo-$7$ paper in this versioned collection.
+
+\paragraph{Contribution.} For Theorem~\ref{thm:1723}, Wei had already reduced the statements to finite computations and expected them to follow from his method. Our contribution there is a short structural argument replacing a computation of more than $10^9$ coefficients by one with fewer than $4000$. Theorem~\ref{thm:19} settles a conjecture that~\cite{Wei} places beyond its methods.
+
+\paragraph{Relation to general results.} Treneer's pole-removal method~\cite{Treneer} is a standard input. Ryan, Sirolli, Villegas-Morales and Zheng~\cite[Theorems 1.3 and 1.5]{RSVZ} already give square-prime, Legendre-restricted congruences as well as cube-prime families. A cube-versus-square distinction would therefore be incorrect. The comparison must use the actual parameters: our modulo-$19$ target arguments are prime to $19$, whereas their displayed modulo-$19$ families contain that factor; the modulo-$17/23$ targets have the specified small primes and additional classes modulo $8$. Wei already supplies their starting forms in his closing section. The remaining contribution is the stated proof and computational reduction, not the invention of those forms or of square-prime congruences. The consulted sources did not supply these exact conclusions; this is a bounded priority assessment.
+
+The residue classes in Theorem~\ref{thm:1723} are exactly the $N$ with $N\equiv3\pmod 8$ and $\leg N{11}=-1$, respectively $N\equiv5\pmod8$ and $\leg N{13}=1$. This was checked by enumeration modulo $88$ and $104$.
+
+\paragraph{Method.} Both proofs use Shimura's operators $T(\ell^2)$ on half-integral weight forms~\cite{Shimura,Ono}. For $f=\sum a(n)q^n\in M_{\lambda+1/2}(\Gamma_0(N))$ (trivial character, $4\mid N$, $\ell\nmid N$),
+\begin{equation}\label{eq:T}
+(f\mid T(\ell^2))(n)=a(\ell^2n)+\leg{(-1)^\lambda n}{\ell}\ell^{\lambda-1}a(n)+\ell^{2\lambda-1}a(n/\ell^2),
+\end{equation}
+with $a(x)=0$ for $x\notin\mathbb Z$. Theorem~\ref{thm:1723} needs only the low-dimensional spaces $M_{\lambda+1/2}(\Gamma_0(4))$. Theorem~\ref{thm:19} concerns $\pb(4n)$, whose generating function $\varphi(q)^3/\varphi(-q)^4$ has a pole at the cusp $0$. The new ingredient is a holomorphic representative modulo~$19$ of the relevant projection.
+
+\paragraph{Sturm's theorem.} If $g\in M_k(\Gamma_0(N),\chi)$ has $p$-integral coefficients and $a(n)\equiv0\pmod p$ for $n\le\frac{k}{12}[\mathrm{SL}_2(\mathbb Z):\Gamma_0(N)]$, then $g\equiv0\pmod p$~\cite{Sturm}. For half-integral weight we apply it to $g^2$ (or $g\varphi$), which has integral weight. If the first nonzero coefficient of $g$ modulo $p$ is at $n_0$, then that of $g^2$ is at $2n_0$, because $\mathbb F_p[[q]]$ is an integral domain.
+
+\section{Proof of Theorem~\ref{thm:1723}}
+Write $(p,\ell,\lambda,r)=(17,11,7,3)$ or $(23,13,10,5)$.
+
+\begin{lemma}[Wei's reduction]\label{lem:c}
+There is $c=\sum c(n)q^n\in M_{\lambda+1/2}(\Gamma_0(4))$ with integer coefficients and $\sum\pb(pn)(-q)^n\equiv c\pmod p$. Explicitly, with $F$ as above,
+\begin{align*}
+c&=13F^2\varphi^7+13F\varphi^{11}+\varphi^{15} && (p=17),\\
+c&=20F^5\varphi+17F^4\varphi^5+14F^3\varphi^9+5F^2\varphi^{13}+9F\varphi^{17}+\varphi^{21} && (p=23).
+\end{align*}
+\end{lemma}
+\begin{proof}
+We have $\sum\pb(n)(-q)^n=1/\varphi(q)$ and $\varphi(q)^p\equiv\varphi(q^p)\pmod p$, so $\varphi(q^p)\sum\pb(n)(-q)^n\equiv\varphi^{p-1}$. Extracting the exponents divisible by $p$ and replacing $q^p$ by $q$ gives $\varphi(q)\sum\pb(pn)(-q)^n\equiv\varphi^{p-1}\mid T(p)\pmod p$, where $T(p)$ is the Hecke operator on $M_{(p-1)/2}(\Gamma_0(4),\chi_{-4}^{(p-1)/2})$ (its second term carries $p^{(p-3)/2}\equiv0$). We computed $\varphi^{p-1}\mid T(p)$ exactly in the triangular basis $F^a\varphi^{p-1-4a}$. Its coordinates modulo $p$ are $(1,13,13,0,0)$ for $p=17$ and $(1,9,5,14,17,20)$ for $p=23$. Each is $\varphi$ times the stated $c$. For $p=17$ the coordinate of $F^4$ is $0$, so no $\varphi^{-1}$ term arises. Since $\varphi\in1+2q\mathbb Z[[q]]$ is a unit modulo $p$, the claim follows.
+\end{proof}
+
+\begin{proposition}\label{prop:h}
+Modulo $p$, $c\mid T(\ell^2)\equiv\ell^{\lambda-1}c+h$ with $\ell^{\lambda-1}\equiv8\pmod{17}$, respectively $3\pmod{23}$, and
+\begin{align*}
+h&=12(F\varphi^{11}+F^2\varphi^7) && (p=17),\\
+h&=16F\varphi^{17}+16F^2\varphi^{13}+14F^3\varphi^9+7F^4\varphi^5+15F^5\varphi && (p=23).
+\end{align*}
+\end{proposition}
+\begin{proof}
+$T(\ell^2)$ preserves $M_{\lambda+1/2}(\Gamma_0(4))$, which has the upper-triangular basis $F^a\varphi^{2\lambda+1-4a}$ of dimension $4$, respectively $6$. We computed the integer matrix of $T(\ell^2)$ in this basis from~\eqref{eq:T}, checking membership of each image in the span on all available coefficients. We then reduced $c\mid T(\ell^2)-\ell^{\lambda-1}c$ modulo $p$.
+\end{proof}
+
+\begin{lemma}\label{lem:hclass}
+$h(n)\equiv0\pmod p$ for all $n\equiv r\pmod 8$.
+\end{lemma}
+\begin{proof}
+Let $g=\sum_{n\equiv r\ (8)}h(n)q^n$. Since $r$ is odd, averaging the twists of $h$ by the four real characters modulo $8$ shows $g\in M_{\lambda+1/2}(\Gamma_0(256))$~\cite[Prop.~2.4 and Remark~2.5]{Wei}. Then $g\varphi\in M_{\lambda+1}(\Gamma_0(256),\chi_{-4}^{\lambda+1})$ has integer coefficients. The Sturm bound is $(\lambda+1)\cdot384/12=256$, respectively $352$. The coefficients of $g\varphi$ vanish modulo $p$ for $n<4000$, so $g\varphi\equiv0$, and $g\equiv0$ because $\varphi$ is a unit.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:1723}]
+Let $N\equiv r\pmod8$ with $\leg N\ell=-1$ (for $p=17$), respectively $+1$ (for $p=23$). Then $\ell\nmid N$, and the character value in~\eqref{eq:T} is $\leg{-1}{11}\leg N{11}=(-1)(-1)=1$, respectively $\leg N{13}=1$ since $\lambda=10$ is even. Comparing $N$-th coefficients in Proposition~\ref{prop:h},
+\[c(\ell^2N)+\ell^{\lambda-1}c(N)\equiv\ell^{\lambda-1}c(N)+h(N)\pmod p,\]
+so $c(\ell^2N)\equiv h(N)\equiv0$ by Lemma~\ref{lem:hclass}. By Lemma~\ref{lem:c}, $\pb(p\ell^2N)\equiv(-1)^{\ell^2N}c(\ell^2N)\equiv0\pmod p$.
+\end{proof}
+
+\section{Proof of Theorem~\ref{thm:19}}
+Let $c(n)=\pb(4n)$. A $2$-dissection gives
+\[F_4:=\sum_{n\ge0}c(n)q^n=\frac{\varphi(q)^3}{\varphi(-q)^4}=\frac{\eta(2z)^{19}}{\eta(z)^{14}\eta(4z)^{6}},\]
+The identity follows algebraically, not from a finite check: with $E(\sum a_nq^n)=\sum a_{2n}q^n$, the classical relations $\varphi(q)\varphi(-q)=\varphi(-q^2)^2$, $E\varphi=\varphi(q^2)$ and $E(\varphi^2)=\varphi^2$ give successively
+\[E(1/\varphi(-q))=\varphi(q^2)/\varphi(-q)^2,
+\qquad E(\varphi(q^2)\varphi(q)^2/\varphi(-q^2)^4)=F_4.\]
+Since $\varphi(q)$ and $\varphi(-q)=2\varphi(q^4)-\varphi(q)$ transform under $\Gamma_0(16)$ with Shimura's theta multiplier $j(\gamma,z)$, $F_4$ is weakly holomorphic of weight $-1/2$. Its raw exponent at odd-denominator cusps is $-1/4$ (multiply by cusp width for the local-parameter order). Theorem~\ref{thm:19} asserts $c(289n)\equiv0\pmod{19}$ on the stated classes.
+
+\paragraph{A representative without poles at most cusps.} Put $E_1=\eta(z)^{19}/\eta(19z)$ and $E_2=\eta(19z)^{19}/\eta(361z)$. Both lie in $1+19q\mathbb Z[[q]]$, because $(1-q^n)^{19}\equiv1-q^{19n}$. By the criterion of Gordon--Hughes--Newman and Ligozat, $E_1E_2\in M_{18}(\Gamma_0(361))$ with trivial character. Set
+\[F''=F_4E_1E_2=\frac{\eta(z)^{5}\eta(2z)^{19}\eta(19z)^{18}}{\eta(4z)^{6}\eta(361z)}\equiv F_4\ (\mathrm{mod}\ 19).\]
+Then $F''(\gamma z)=j(\gamma,z)^{35}F''(z)$ on $\Gamma_0(16\cdot361)$. Indeed $F_4(\gamma z)=j(\gamma,z)^{-1}F_4(z)$, and $(E_1E_2)(\gamma z)=(cz+d)^{18}(E_1E_2)(z)$. Since $j(\gamma,z)^2=\leg{-1}d(cz+d)$, we have $(cz+d)^{18}=j(\gamma,z)^{36}$. So $F''$ is weakly holomorphic of weight $35/2$ with trivial character. Multiplying by an eta-quotient congruent to $1$ modulo $p$ to remove poles is the standard device of Treneer~\cite{Treneer}. The point here is that the multiplication must precede the projection. At a cusp $a/c$ with $361\nmid c$, the factor $E_1$ (if $19\nmid c$) or $E_2$ (if $19\parallel c$) has order large enough to cancel the pole of $F_4$. So $F''$ has positive order at every cusp with $361\nmid c$.
+
+\paragraph{Projection.} Let $G''=\sum c''(n)q^n$, summed over $n\equiv3\pmod8$ with $\leg n{19}=1$, where $c''(n)$ are the coefficients of $F''$. Then $G''\in\mathbb Z[[q]]$ and $G''\equiv\sum_{n\equiv3\,(8),\,(n/19)=1}c(n)q^n\pmod{19}$. Explicitly $G''(z)=\sum_{t\bmod152}W_tF''(z+t/152)$. Writing $t=19j+8k$, the weights are $W_t=\frac18e(-3j/8)\,b_k$ with $b_0=9/19$ and $b_k=-(1+\chi(k)g)/38$, where $\chi=\leg\cdot{19}$ and $g$ is the Gauss sum. These weights reproduce the indicator function exactly.
+
+\begin{lemma}
+$G''(\gamma z)=j(\gamma,z)^{35}G''(z)$ for all $\gamma\in\Gamma_0(23104)$, where $23104=64\cdot361$.
+\end{lemma}
+\begin{proof}
+Let $\gamma=\begin{pmatrix}a&b\\c&d\end{pmatrix}\in\Gamma_0(23104)$, so $152^2\mid c$. For each $t$ put $t'\equiv td^2\pmod{152}$. Then $\gamma'=T_{t/152}\gamma T_{-t'/152}$ is in $\Gamma_0(16\cdot361)$ with lower-right entry $d'=d-ct'/152\equiv d$ modulo $8$ and modulo $c/23104$. Hence $j(\gamma',z+t'/152)=j(\gamma,z)$. Since $d^2\equiv1\pmod 8$ and $\chi(kd^2)=\chi(k)$, we have $W_{t'}=W_t$, and the sum is permuted.
+\end{proof}
+
+\begin{proposition}\label{prop:cusp}
+$G''$ is a cusp form: $G''\in S_{35/2}(\Gamma_0(23104))$.
+\end{proposition}
+\begin{proof}
+At the $228$ cusps with $361\nmid c$, every translate is expanded at a cusp whose reduced denominator is again not divisible by $361$; exact order arithmetic gives strictly positive order in all $228\cdot152=34656$ cases. At the other twelve cusps, some translated summands have nonpositive exponents; this does not say that $F''$ itself has a pole at each of them. Appendix~\ref{app:cusp} specifies the complete finite obligation and expansion convention. Grouping by exponent and rational square class leaves $28$ cyclotomic sums with $32928$ summands. Every sum reduces exactly to zero modulo its cyclotomic polynomial. Thus all principal parts and constant terms vanish. This exact calculation, not numerical decay, proves the assertion.
+
+Historical numerical corroboration used a separately written program; it is not the exact proof or a newly repeated scan. It evaluated $|G''(\gamma z)(cz+d)^{-35/2}|$ at $200$-digit precision at all $240$ cusps, along vertical rays of increasing height. It observed exponential decay everywhere, with stable fitted orders of $16$, $19$, $4$ and $11$ in the local parameter, and found no constant term or pole. At the $12$ critical cusps the cancellation is by factors $10^{-63}$ to $10^{-118}$, well within the working precision. The same program checked the transformation law on several matrices of $\Gamma_0(23104)$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:19}]
+Since $17\nmid23104$, $T(289)$ acts on $S_{35/2}(\Gamma_0(23104))$ by~\eqref{eq:T} with $\lambda=17$. Moreover $17^{16}\equiv5$ and $17^{33}\equiv17^{15}\pmod{19}$. Let $H=G''\mid T(289)-14G''$, a cusp form with integer coefficients. Its square belongs to $S_{35}(\Gamma_0(23104),\chi_{-4})$. The index is $36480$, so the character-version Sturm bound is $106400$. It suffices to check $H(n)\equiv0\pmod{19}$ for $0\le n\le53200$, inclusively. One implementation generates $F_4$ through exponent $289\cdot53200=15374800$ (with ten spare coefficients); a separate implementation generates $\pb$ through argument $4\cdot289\cdot53200=61499200$. Both test the same finite obligation, with no exception. Hence, for all $n$ in the support,
+\[c(289n)+5\leg n{17}c(n)+17^{15}c(n/289)\equiv14\,c(n)\pmod{19}.\]
+If $n\equiv3\pmod8$, $\leg n{19}=1$ and $\leg n{17}=-1$, then $17\nmid n$, $289n$ lies in the same classes, and the relation gives $c(289n)\equiv19c(n)\equiv0$.
+\end{proof}
+
+\begin{remark}
+The scalar $14$ differs from $1+17^{33}\equiv8\pmod{19}$; no particular Eisenstein series is being identified here. The relation does not extend to arbitrary coefficients outside the projection. Projecting $F_4$ before multiplying by $E_1E_2$ leaves poles, so the order of the two operations matters.
+\end{remark}
+
+\section{Computations}
+All computations use exact integer or modular arithmetic (python-flint), except the high-precision confirmation in Proposition~\ref{prop:cusp}. The scripts and logs are in the accompanying evidence bundle. Each theorem was also confirmed directly: Theorem~\ref{thm:1723} for arguments up to $2\cdot10^7$ ($552$ and $295$ cases), and Theorem~\ref{thm:19} for all $n\le53200$.
+
+\appendix
+\section{Exact cusp certificate}\label{app:cusp}
+Write $e(x)=\exp(2\pi ix)$. The eta-exponent vector, in increasing argument order, is
+\[(\delta,r_\delta)=(1,5),(2,19),(4,-6),(19,18),(361,-1).\]
+Represent the cusps by $a/c$ with $c\mid L=23104$, $\gcd(a,c)=1$, and one numerator in each unit class modulo $\gcd(c,L/c)$. There are $240$ such cusps. Choose $A_s=\left(\begin{smallmatrix}a&b\\c&d\end{smallmatrix}\right)$ with $ad-bc=1$. The expansion convention is
+\[(-i(c\tau+d))^{-35/2}G''(A_s\tau)=\sum_E C_E e(E\tau).
+\]
+The cusp width is $w=L/\gcd(c^2,L)$, so the exponent in the width-normalised local parameter is $wE$. Multiplication by a nonzero phase to change slash conventions does not change vanishing.
+
+\begin{center}\small
+\begin{tabular}{r r r l r}
+$c$&cusps&$w$&raw $E\le0$&groups\\\hline
+361&1&64&$-1/4,0$&3\\
+722&1&16&$-1,0$&3\\
+1444&2&4&$-4,0$&6\\
+2888&4&1&$-16,0$&12\\
+5776&2&1&$0$&2\\
+11552&1&1&$0$&1\\
+23104&1&1&$0$&1\\\hline
+Total&12&&&28
+\end{tabular}
+\end{center}
+The listed exponents are those arising from translated summands before cancellation. All resulting group sums are zero.
+
+\paragraph{Matrix and multiplier convention.}
+For each $t=19j+8k$, decompose the integer matrix
+\[M_t=\begin{pmatrix}152a+tc&152b+td\\152c&152d\end{pmatrix}
+=\gamma\begin{pmatrix}u_1&u_2\\0&u_3\end{pmatrix},\qquad \gamma\in\mathrm{SL}_2(\mathbb Z),\ u_1,u_3>0.
+\]
+This is obtained by the extended Euclidean algorithm on the first column, with $u_1$ its positive gcd. For each eta factor similarly decompose $\operatorname{diag}(\delta,1)\gamma=\gamma_\delta V_\delta$. For a matrix $(a',b';c',d')$ with $c'>0$, use
+\[\eta(\gamma_\delta z)=e\!\left(\frac{a'+d'}{24c'}-\frac{s(d',c')}{2}\right)
+[-i(c'z+d')]^{1/2}\eta(z),\]
+where $s$ is the rational Dedekind sum and the analytic square root is fixed on the upper half-plane. This is the convention in Kong--Teo~\cite[Eq.~(1.2)]{KT} after absorbing the $e(-1/8)$ phase into the square root.
+
+\paragraph{Finite truncation and exact arithmetic.}
+The decompositions give a leading exponent $E_0$, a root-of-unity phase, a positive square root of a rational number, and factors
+\[\prod_{\delta}\prod_{n\ge1}(1-e(n\beta_\delta)q^{n\alpha_\delta})^{r_\delta},
+\qquad \alpha_\delta>0.\]
+If $E_0>0$, no term is needed. Otherwise expand only increments at most $-E_0$. All increments are positive; consequently omitted factors and higher binomial terms cannot contribute to an exponent $E\le0$. For $r<0$ use $\binom r m=(-1)^m\binom{-r+m-1}m$. All phases and amplitudes before square roots are rational and retained exactly.
+
+Multiply by the specified projection weights $W_t$ and group by $E$ and rational square class. Within each group, choose the least common denominator $n$ of phases and form $P(X)=\sum_j q_j X^{nr_j\bmod n}\in\mathbb Q[X]$. Check $P\bmod\Phi_n=0$. The actual fields have $n=38,76,152$. This separate vanishing of all square-class groups is sufficient; no assumption of their linear independence is required. The certificate contains $32928$ summands in $28$ groups. Projection denominators divisible by $19$ cause no reduction problem: $G''$ is defined as retention of integer coefficients, and the Fourier weights are used only to prove its modularity and cusp behaviour in characteristic zero.
+
+\paragraph{Reproduction.}
+From the collection root run \texttt{python verify.py mod17-19-23}. The wrapper pins the lifted eta vector, checks all $34656$ positive orders, requires exactly twelve critical cusps and all $28$ zero groups, and performs the inclusive Hecke--Sturm check. It fails on an unmet obligation, not merely prints a Boolean. Numerical cusp decay is retained as corroboration only.
+
+\begin{proposition}[Sufficient lift--project criterion]
+Let $f$ be weakly holomorphic with integral Fourier coefficients, and let $E\equiv1\pmod p$ be an integral eta product or quotient. Suppose a finite Fourier projection $P$ retains specified integer coefficients, $P(Ef)$ has a proved modular transformation law at a finite-index level, and every nonpositive cusp coefficient vanishes by complete finite expansions as above. Then $P(Ef)$ is an integral cusp form congruent to $P(f)$ modulo $p$. Any proposed Hecke congruence for it follows from a valid Sturm check in the resulting weight, level and character.
+\end{proposition}
+\begin{proof} The transformation law and cusp expansions establish cusp membership. Coefficient retention commutes with reduction, so $P(Ef)\equiv P(f)$. Apply the relevant Hecke operator and Sturm theorem to their difference.\end{proof}
+This is a sufficient certificate pattern, not an automatic existence theorem for a suitable $E$, nor a claim that this general principle is new.
+
+\section*{Collection and verification}
+This paper is part of the revised collection, version 1.1.0-candidate, DOI \url{https://doi.org/10.5281/zenodo.23319157}. Companion papers and exact verification code are archived together. The statements are unrefereed computer-assisted proof candidates; no formal verification or unaffiliated reproduction is asserted.
+
+\begin{thebibliography}{99}
+\bibitem{KT} Z.-Y.~Kong and L.-P.~Teo, An elementary proof of the transformation formula for the Dedekind eta function, arXiv:2302.03280 (2023), \url{https://arxiv.org/abs/2302.03280}.
+\bibitem{CL} S.~Corteel and J.~Lovejoy, Overpartitions, \emph{Trans. Amer. Math. Soc.} 356 (2004), 1623--1635.
+\bibitem{Ono} K.~Ono, \emph{The Web of Modularity: Arithmetic of the Coefficients of Modular Forms and $q$-series}, CBMS Regional Conf. Ser. Math. 102, Amer. Math. Soc., 2004.
+\bibitem{Shimura} G.~Shimura, On modular forms of half integral weight, \emph{Ann. of Math.} 97 (1973), 440--481.
+\bibitem{Sturm} J.~Sturm, On the congruence of modular forms, in \emph{Number Theory (New York, 1984--1985)}, Lecture Notes in Math. 1240, Springer, 1987, 275--280.
+\bibitem{RSVZ} N.~C.~Ryan, N.~Sirolli, J.~C.~Villegas-Morales and Q.-Y.~Zheng, Explicit families of congruences for the overpartition function, \emph{Ramanujan J.} (2024); arXiv:2309.01792.
+\bibitem{Treneer} S.~Treneer, Congruences for the coefficients of weakly holomorphic modular forms, \emph{Proc. London Math. Soc. (3)} 93 (2006), 304--324.
+\bibitem{Wei} X.~Wei, New Ramanujan-type congruences for overpartitions modulo 11 and 13, arXiv:2603.08510 (2026).
+\end{thebibliography}
+\end{document}

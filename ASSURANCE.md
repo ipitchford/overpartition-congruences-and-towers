@@ -1,0 +1,12 @@
+# Assurance and scientific scope
+
+This collection contains written computer-assisted proof candidates. Exact arithmetic closes finite obligations after the modular-form arguments establish finite determination. It is not a proof-assistant formalisation.
+
+- A: theta dissection, eta modularity and residue-preserving denominator imply the target follows from a weight-18 projection at sufficient level 3136. The inclusive bound 8064 includes 432 target coefficients; all vanish. Nonzero complementary controls exclude an identically zero computation. The level is sufficient, not asserted minimal.
+- B17/23: known starting forms, exact Hecke matrices and odd-class projections at bounds 256/352. The small-space structural calculation is the contribution, not the initial forms.
+- B19: the lifted eta quotient has weight 35/2. All 34656 noncritical translated cusp orders are positive. Twelve critical cusps produce 28 groups and 32928 summands, each cancelling in exact cyclotomic arithmetic. The squared Hecke difference has character chi_-4, weight 35, bound 106400; coefficients through 53200 suffice. Numerical cusp decay is corroboration only.
+- C: exact U(4) eigenvalues 16, -64, -512 and support identities imply all tower levels. The modulo-13 full-class statement holds exactly when i=3 modulo 4, proved using the full 12-state orbit and nonzero coefficient witnesses in all other states. The known eta eigenform is attributed, not relabelled as new.
+
+Different implementations within the supplied and current coordinated AI workflow provide implementation diversity. They are not unaffiliated independent reproduction or human specialist review. The symbolic cusp engine was inspected and replayed, not independently reimplemented from scratch. The 40-million discovery scan and historical full numerical cusp scan were not newly repeated; neither is required by the finite proof. Historical logs are not silently promoted into current checks.
+
+The supplied review assessed each paper prospectively at 2 stars, with B closest to 3. The revisions improve rigour, exposition and reuse and add a precise whole-class classification; no evidence establishes a four-star contribution. Ratings are informal assessments, not official REF outcomes. Literature searches are bounded, and lack of a matching result is not proof of priority. All displayed family restrictions remain essential; no classification of all prime pairs is claimed.
